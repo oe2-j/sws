@@ -57,6 +57,7 @@
 #include "Wol/wol.h"
 #include "nofish/nofish.h"
 #include "snooks/snooks.h"
+#include "joe2/joe2.h"
 
 #define LOCALIZE_IMPORT_PREFIX "sws_"
 #ifdef LOCALIZE_IMPORT_PREFIX
@@ -1214,6 +1215,8 @@ error:
 			ERR_RETURN("nofish init error.")
 		if (!snooks_Init())
 			ERR_RETURN("snooks init error.")
+		if (!joe2_Init())
+			ERR_RETURN("joe2 init error.")
 		if (!SNM_Init(rec)) // keep it as the last init (for cycle actions)
 			ERR_RETURN("S&M init error.")
 
